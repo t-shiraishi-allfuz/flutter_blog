@@ -10,6 +10,9 @@ class TopView extends StatefulWidget {
 
 class _TopViewState extends State<TopView> {
 	// 仮データ
+	String header_image = "assets/images/header.png";
+
+	// 仮データ
 	final Map<String, String> profiles = {
 		'icon': 'assets/images/icon2.jpeg',
 		'name': 'ニックネーム',
@@ -25,8 +28,21 @@ class _TopViewState extends State<TopView> {
 	@override
 	Widget build(BuildContext context) {
 		return Scaffold(
-			appBar: AppBar(
-				title: const Text("マイページ"),
+			appBar: PreferredSize(
+				preferredSize: Size.fromHeight(100.0),
+				child: AppBar(
+					title: const Text("マイページ"),
+					centerTitle: true,
+					flexibleSpace: Container(
+						decoration: BoxDecoration(
+							image: DecorationImage(
+								image: AssetImage(header_image),
+								fit: BoxFit.cover
+							),
+						),
+					),
+					toolbarHeight: 100,
+				),
 			),
 			body: Row(
 				crossAxisAlignment: CrossAxisAlignment.start,

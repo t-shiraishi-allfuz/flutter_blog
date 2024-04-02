@@ -181,9 +181,20 @@ class BlogPostCard extends StatelessWidget {
 									Row(
 										children: [
 											const Spacer(),
-											Text(
-												createdAt,
-												style: TextStyle(fontSize: 10.0),
+											Column(
+												crossAxisAlignment: CrossAxisAlignment.start,
+												children: [
+													Text(
+														createdAt,
+														style: TextStyle(fontSize: 10.0),
+													),
+													IconButton(
+														icon: Icon(Icons.create),
+														color: Colors.white,
+														onPressed: () {
+														},
+													),
+												],
 											),
 										],
 									),
